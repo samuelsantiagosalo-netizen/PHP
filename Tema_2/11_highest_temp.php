@@ -5,15 +5,14 @@ $temperatures = array (
     array(3, 15, 24),
     array(4, 10, 28)
 );
-$maximaMasAlta = 0;
-$diaDeMaxima = 0;
+$max_temps = $temperatures[0][2];
+$last_day = $temperatures[0][0];
 
-for ($fila = 0; $fila < 4; $fila++) {
-    $maximaDelDia = $temperatures[$fila][2]; 
-    if ($maximaDelDia >= $maximaMasAlta) {
-        $maximaMasAlta = $maximaDelDia;
-        $diaDeMaxima = $temperatures[$fila][0]; 
+for ($day = 1; $day < count($temperatures); $day++) {
+    if ($temperatures[$day][2] >= $max_temps) {
+        $maxtemps = $temperatures[$day][2];
+        $last_day = $temperatures[$day][0]; 
     }
 }
-echo "El ultimo dia con la temperatura mas alta fue el dia ", $diaDeMaxima, " con ", $maximaMasAlta, " grados.";
+echo "The last day with maximun tempertature was ", $last_day, " with ", $max_temps, " degres.";
 ?>

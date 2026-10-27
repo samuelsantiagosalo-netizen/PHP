@@ -15,7 +15,7 @@ $matriz2 = array(
     array(5, 5, 5, 5, 5)
 );
 
-// 1. Función que DEVUELVE (return) la matriz transpuesta
+
 function transpuesta($m) {
     $resultado = array();
     for ($fila = 0; $fila < 5; $fila++) {
@@ -26,7 +26,7 @@ function transpuesta($m) {
     return $resultado;
 }
 
-// 2. Función que DEVUELVE (return) la matriz sumada
+
 function sumarMatrices($m1, $m2) {
     $resultado = array();
     for ($fila = 0; $fila < 5; $fila++) {
@@ -37,11 +37,11 @@ function sumarMatrices($m1, $m2) {
     return $resultado;
 }
 
-// Guardamos en variables los resultados que devuelven las funciones
+
 $matrizTranspuesta = transpuesta($matriz1);
 $matrizSuma = sumarMatrices($matriz1, $matriz2);
 
-// Dibujamos la Matriz Transpuesta
+
 echo "<h3>Matriz Transpuesta</h3>";
 echo "<table border='1'>";
 for ($fila = 0; $fila < 5; $fila++) {
@@ -53,7 +53,7 @@ for ($fila = 0; $fila < 5; $fila++) {
 }
 echo "</table>";
 
-// Dibujamos la Matriz Suma
+
 echo "<h3>Suma de las dos matrices</h3>";
 echo "<table border='1'>";
 for ($fila = 0; $fila < 5; $fila++) {

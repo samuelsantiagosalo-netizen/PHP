@@ -4,6 +4,7 @@ $cine = array(
     "Peli B" => array("Sesion 1" => 10, "Sesion 2" => 20, "Sesion 3" => 30)
 );
 
+
 echo "<h3>Audiencia por pelicula:</h3>";
 foreach ($cine as $peli => $sesiones) {
     $totalPeli = 0;
