@@ -1,0 +1,6 @@
+# Evitar subir configuraciones locales o archivos del sistema
+.vscode/
+Thumbs.db
+Desktop.ini
+.DS_Store
+error_log
