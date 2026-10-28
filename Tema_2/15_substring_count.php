@@ -1,9 +1,9 @@
 <?php
-$texto = "hola pedro hola juan hola maria";
-$buscar = "hola";
+$text = "hola pedro hola juan hola maria";
+$search = "hola";
 
-$trozos = explode($buscar, $texto); 
-$veces = count($trozos) - 1; 
+$parts = explode($search, $text); 
+$times = count($parts) - 1; 
 
-echo "La palabra '", $buscar, "' aparece ", $veces, " veces.";
+echo "The word '", $search, "' shows ", $times, " times.";
 ?>

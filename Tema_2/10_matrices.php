@@ -1,67 +1,64 @@
 <?php
-$matriz1 = array(
-    array(1, 2, 3, 4, 5),
-    array(6, 7, 8, 9, 10),
-    array(11, 12, 13, 14, 15),
-    array(16, 17, 18, 19, 20),
-    array(21, 22, 23, 24, 25)
-);
-
-$matriz2 = array(
-    array(1, 1, 1, 1, 1),
-    array(2, 2, 2, 2, 2),
-    array(3, 3, 3, 3, 3),
-    array(4, 4, 4, 4, 4),
-    array(5, 5, 5, 5, 5)
-);
-
-
-function transpuesta($m) {
-    $resultado = array();
-    for ($fila = 0; $fila < 5; $fila++) {
-        for ($col = 0; $col < 5; $col++) {
-            $resultado[$col][$fila] = $m[$fila][$col];
+    function transpose ($matrix){ //It returns the transposed matrix
+        for ($row = 0; $row < count($matrix); $row++) { 
+            for ($col = 0; $col < count($matrix); $col++) {
+                $transposedmatrix[$row][$col]= $matrix[$col][$row];
+                }
         }
+        return $transposedmatrix;
     }
-    return $resultado;
-}
 
-
-function sumarMatrices($m1, $m2) {
-    $resultado = array();
-    for ($fila = 0; $fila < 5; $fila++) {
-        for ($col = 0; $col < 5; $col++) {
-            $resultado[$fila][$col] = $m1[$fila][$col] + $m2[$fila][$col];
+    function display ($matrix){//It carries to the output the HTML code to display a matrix as a table
+        echo "<table>";
+        for ($row = 0; $row < count($matrix); $row++) {  
+            echo "<tr>";
+            for ($col = 0; $col < count($matrix); $col++) {
+                echo "<td>", $matrix[$row][$col],"</td>";
+            }
+            echo "</tr>";
         }
+        echo "</table>";
     }
-    return $resultado;
-}
 
 
-$matrizTranspuesta = transpuesta($matriz1);
-$matrizSuma = sumarMatrices($matriz1, $matriz2);
-
-
-echo "<h3>Matriz Transpuesta</h3>";
-echo "<table border='1'>";
-for ($fila = 0; $fila < 5; $fila++) {
-    echo "<tr>";
-    for ($col = 0; $col < 5; $col++) {
-        echo "<td>", $matrizTranspuesta[$fila][$col], "</td>";
+    function matrixsum($matrix,$matrix1){
+        for ($row = 0; $row < count($matrix); $row++) {  
+            for ($col = 0; $col < count($matrix [$row]); $col++) {
+                $matsum[$row][$col]=$matrix[$row][$col]+$matrix1[$row][$col];
+                }
+        }
+        return $matsum;
     }
-    echo "</tr>";
-}
-echo "</table>";
 
+    $matrix=[
+    array(1,12,26,23,12),
+    array(2,11,24,32,4),
+    array(3,15,24,43,21),
+    array(4,15,24,43,21),
+    array(5,12,3,21,34)
+    ];
+    $matrix1=[
+    array(1,12,36,53,12),
+    array(2,11,64,12,4),
+    array(3,14,34,33,26),
+    array(4,12,24,23,24),
+    array(5,1,3,31,33)
+    ];
 
-echo "<h3>Suma de las dos matrices</h3>";
-echo "<table border='1'>";
-for ($fila = 0; $fila < 5; $fila++) {
-    echo "<tr>";
-    for ($col = 0; $col < 5; $col++) {
-        echo "<td>", $matrizSuma[$fila][$col], "</td>";
-    }
-    echo "</tr>";
-}
-echo "</table>";
+    echo "Matrices operations";
+    echo "<h2>Original matrix</h2>";
+    display($matrix);
+    echo "<h2>transposed matrix</h2>";
+    #The parameter of the display() function is taken from the calling to another function
+    display(transpose($matrix));
+    #Now, the HTML code to display the arrays is carried to the output file
+    echo "<h2>Original matrices</h2>";
+    echo "<h2>First matrix</h2>";
+
+    display($matrix);
+    echo "<h2>Second matrix</h2>";
+    display($matrix1);
+
+    echo "<p>The sum of these two matrices is  </p>";
+    display(matrixsum($matrix,$matrix1));
 ?>

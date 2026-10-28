@@ -1,10 +1,12 @@
 <?php
-$palabra = "reconocer";
-$invertida = strrev($palabra); 
+$word = "reconocer";
+$reverse = strrev($word); 
 
-if ($palabra == $invertida) {
-    echo "La palabra ", $palabra, " es un palindromo.";
+if ($word == $reverse) {
+    echo "The word ", $word, " is a  palindrome.";
 } else {
-    echo "La palabra ", $palabra, " NO es un palindromo.";
+    echo "The word ", $word, " ins't a palindrome.";
 }
 ?>
+
+

@@ -1,25 +1,18 @@
 <?php
-$cine = array(
-    "Peli A" => array("Sesion 1" => 40, "Sesion 2" => 50, "Sesion 3" => 60),
-    "Peli B" => array("Sesion 1" => 10, "Sesion 2" => 20, "Sesion 3" => 30)
-);
 
-
-echo "<h3>Audiencia por pelicula:</h3>";
-foreach ($cine as $peli => $sesiones) {
-    $totalPeli = 0;
-    foreach ($sesiones as $espectadores) {
-        $totalPeli += $espectadores;
+    $cinema=[
+    array(1,62,56,53,35),
+    array(2,71,44,54,36),
+    array(3,15,24,45,34)
+    ];
+    echo "<table><caption>Number of spectators of each film and session</caption>";
+    echo "<tr><th>Session</th><th>Film 1</th><th>Film 2</th><th>Film 3</th><th>Film 4</th></tr>";
+    for ($ses = 0; $ses <  count($cinema); $ses++) {
+        echo "<tr>";
+        for ($film = 0; $film < count($cinema[0]); $film++) {
+            echo "<td>", $cinema[$ses][$film],"</td>";
+        }
+        echo "</tr>";
     }
-    echo "La ", $peli, " tuvo ", $totalPeli, " espectadores.<br>";
-}
-
-echo "<h3>Audiencia por sesion:</h3>";
-$totalS1 = 0; $totalS2 = 0; $totalS3 = 0;
-foreach ($cine as $peli => $sesiones) {
-    $totalS1 += $sesiones["Sesion 1"];
-    $totalS2 += $sesiones["Sesion 2"];
-    $totalS3 += $sesiones["Sesion 3"];
-}
-echo "Sesion 1: ", $totalS1, "<br>Sesion 2: ", $totalS2, "<br>Sesion 3: ", $totalS3, "<br>";
+    echo "</table>";
 ?>
