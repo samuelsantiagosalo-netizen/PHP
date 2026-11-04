@@ -7,3 +7,4 @@ $times = count($parts) - 1;
 
 echo "The word '", $search, "' shows ", $times, " times.";
 ?>
+ 

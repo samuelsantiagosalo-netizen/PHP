@@ -4,21 +4,20 @@ $alumnos = array(
     "Pérez Sánchez, Juan" => array(6, 5, 8)
 );
 
-function arreglarNombre($nombreMalo) {
-    $partes = explode(", ", $nombreMalo); 
-    return $partes[1] . " " . $partes[0]; 
+function changename($badname) {
+    $parts = explode(", ", $badname); 
+    return $parts[1] . " " . $parts[0]; 
 }
 
-echo "<ul>";
-foreach ($alumnos as $nombreMalo => $notas) {
-    $nombreBueno = arreglarNombre($nombreMalo);
+foreach ($alumnos as $badname => $notes) {
+    $goodname = changename($badname);
     
-    $proyecto = $notas[0] * 0.35;
-    $actividad = $notas[1] * 0.15;
-    $examen = $notas[2] * 0.50;
-    $notaFinal = $proyecto + $actividad + $examen;
+    $proyect = $notes[0] * 0.35;
+    $activity = $notes[1] * 0.15;
+    $exam = $notes[2] * 0.50;
+    $finalnote = $proyect + $activity + $exam;
     
-    echo "<li>", $nombreBueno, " tiene un ", $notaFinal, " de nota final.</li>";
+    echo "<li>", $goodname, " have", $finalnote, " of final note .</li>";
 }
-echo "</ul>";
+
 ?>
