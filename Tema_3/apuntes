@@ -1,0 +1,8 @@
+para enviar datos de un formulario necesitamos que todo imput del formulario debe llevar atributo name
+<input type="text" name =city/> en los input donde escribes hacen falta la etiqueta name
+<input type="checkbox" name="condiciones" value="acepto"/> en checkbox o radio pasa lo mismo pero cn value
+<input type="radio" name="userkind" value="prime"/> es el puntiko segun gorch
+<placeholder="write..."
+<textarea name="comments"..></textarea> 
+<select name="link"></select>
+<option value="coffe">coffe</option> 

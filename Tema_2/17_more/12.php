@@ -1,13 +1,14 @@
 <?php
 
-    $number = 30
-    function alldivisors($number) {
-        $divisors array 
+$number = 7;
 
-        for
-            if
-            
-        return
+echo "<ul>";
+for ($i= 1;$i <= $number/2; $i++) {
+    if ($number % i == 0) {
+        echo "<li>", $i ,"</li>";
     }
+}
+
+echo "</ul>"
 
 ?>
